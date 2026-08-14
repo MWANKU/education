@@ -270,7 +270,7 @@ main {
             rgba(0, 60, 130, 0.55),
             rgba(0, 0, 0, 0.05)
         ),
-        url("./images/logoeleves.png");
+        url("logoeleves.png");
 
     background-size: cover;
     background-position: center 20%;
