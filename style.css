@@ -49,17 +49,18 @@ body {
 ========================= */
 
 .logo {
-    text-decoration: none;
+    
 
     display: flex;
-    flex-direction: column;
-
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    text-decoration: none;
+}
 
-    line-height: 1;
-
-    min-width: 180px;
+.logo img {
+    width: 180px;
+    height: auto;
+    display: block;
 }
 
 .minedu-nc {
@@ -270,9 +271,9 @@ main {
             rgba(0, 60, 130, 0.55),
             rgba(0, 0, 0, 0.05)
         ),
-        url("logoeleves.png");
+        url("./images/logoeleves.png");
 
-    background-size: cover;
+    background-size:auto;
     background-position: center 20%;
     background-repeat: no-repeat;
 
@@ -406,6 +407,382 @@ body{
     
 }
 
+
+
+/* CONTENEUR DES 4 CARTES */
+.cartes-informations {
+    display: flex;
+    grid-template-columns: repeat(4, 1fr);
+    gap:15px;
+    width: 100%;
+    height: 200px;
+}
+
+/* UNE CARTE */
+.carte-info {
+    background: white;
+    min-height: 190px;
+    padding: 25px;
+    box-sizing: border-box;
+
+    border: 1px solid #dce6f2;
+    border-top: 4px solid #0866c6;
+    border-radius: 12px;
+
+    text-align: center;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* ICÔNE */
+.carte-info i {
+    font-size: 38px;
+    color: #0866c6;
+    margin-bottom: 15px;
+}
+
+/* TITRE */
+.carte-info h3 {
+    color: #003b7a;
+    font-size: 20px;
+    margin: 8px 0 12px;
+}
+
+/* TEXTE */
+.carte-info p {
+    color: #607089;
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* EFFET AU SURVOL */
+.carte-info:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================
+   SECTION ACTUALITÉS
+========================= */
+
+.actualites {
+    width: 90%;
+    max-width: 1200px;
+    margin: 60px auto;
+}
+
+
+/* En-tête de la section */
+
+.actualites-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.actualites-header h2 {
+    margin: 0;
+
+    font-size: 30px;
+    color: #12345b;
+}
+
+
+/* Lien voir toutes les actualités */
+
+.voir-actualites {
+    color: #0866c6;
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.voir-actualites i {
+    margin-left: 6px;
+}
+
+
+/* =========================
+   CONTENEUR DES CARTES
+========================= */
+
+.actualites-container {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* =========================
+   CARTE
+========================= */
+
+.actualite-card {
+    background: white;
+
+    border: 1px solid #e1e8f0;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+
+/* Effet souris */
+
+.actualite-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.actualite-image {
+    position: relative;
+
+    width: 100%;
+    height: 190px;
+
+    overflow: hidden;
+}
+
+
+.actualite-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =========================
+   DATE
+========================= */
+
+.date {
+    position: absolute;
+
+    top: 15px;
+    left: 15px;
+
+    background: #0866c6;
+
+    color: white;
+
+    padding: 8px 14px;
+
+    border-radius: 6px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   CONTENU
+========================= */
+
+.actualite-contenu {
+    padding: 20px;
+}
+
+
+.actualite-contenu h3 {
+    margin: 0 0 12px;
+
+    font-size: 20px;
+
+    color: #12345b;
+}
+
+
+.actualite-contenu p {
+    margin: 0 0 18px;
+
+    color: #64748b;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   LIRE LA SUITE
+========================= */
+
+.lire-suite {
+    color: #0866c6;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+
+.lire-suite i {
+    margin-left: 6px;
+
+    transition: transform 0.3s ease;
+}
+
+
+.lire-suite:hover i {
+    transform: translateX(5px);
+}
+
+
+/* =========================
+   TABLETTE
+========================= */
+
+@media (max-width: 900px) {
+
+    .actualites-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* Téléphones */
+@media (max-width: 768px) {
+
+    .informations {
+        width: 92%;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin: 25px auto;
+    }
+
+    .info-card {
+        min-height: 160px;
+        padding: 18px 10px;
+    }
+
+    .info-card i {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    .info-card h3 {
+        font-size: 16px;
+    }
+
+    .info-card p {
+        font-size: 13px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   SMARTPHONE
+========================= */
+
+@media (max-width: 600px) {
+
+    .actualites {
+        width: 92%;
+        margin: 40px auto;
+    }
+
+
+    .actualites-header {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+
+    .actualites-header h2 {
+        font-size: 24px;
+    }
+
+
+    .voir-actualites {
+        font-size: 14px;
+    }
+
+
+    .actualites-container {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+
+    .actualite-image {
+        height: 180px;
+    }
+
+
+    .actualite-contenu {
+        padding: 16px;
+    }
+
+
+    .actualite-contenu h3 {
+        font-size: 18px;
+    }
+
+
+    .actualite-contenu p {
+        font-size: 14px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Conteneur global de la section du bas */
 .section-actualites-infos {
     padding: 60px 10%;
@@ -471,11 +848,18 @@ body{
     padding-top: 15px;
 }
 
-.date {
-    font-size: 12px;
-    color: #8993a4;
+.date-actualite {
+    color: #6b7280;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
 }
 
+.date-actualite::before {
+    content: "";
+}
 .lire-plus {
     font-size: 14px;
     font-weight: 600;
@@ -545,6 +929,73 @@ body{
     margin-bottom: 25px;
     font-weight: normal;
 }
+/* =========================
+   DIAPORAMA
+========================= */
+
+.diaporama {
+    width: 100%;
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #eef2f7;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 1.2s ease-in-out;
+
+    z-index: 0;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Le texte du serment */
 .texte-serment {
@@ -632,110 +1083,137 @@ body{
         width: 100%;
         padding: 20px;
     }
+
+
+
+    
 }
 body {
-    background: red !important;
+    background: rgba(255, 255, 255, 0.819) !important;
 }
 
 /* =========================
-   RESPONSIVE RENFORCE
-   ========================= */
-@media (max-width: 768px) {
-    .banniere {
-        width: 100%;
-        min-height: 90px;
-        height: auto;
-        padding: 15px 20px;
-        gap: 12px;
-    }
+   FOOTER
+========================= */
 
-    .logo {
-        min-width: 0;
-        align-items: center;
-    }
+.footer {
+    background: #062d63;
 
-    .minedu-nc {
-        font-size: 22px;
-    }
+    color: white;
 
-    .tshopo {
-        font-size: 13px;
-        letter-spacing: 4px;
-    }
-
-    .menu {
-        width: 100%;
-    }
-
-    .menu > ul {
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-        gap: 5px;
-    }
-
-    .menu > ul > li {
-        width: 100%;
-        text-align: center;
-    }
-
-    .menu a {
-        justify-content: center;
-    }
-
-    .menu .submenu {
-        position: static;
-        min-width: 0;
-        width: 100%;
-    }
-
-    .recherche {
-        width: 100%;
-        min-width: 0;
-        margin-left: 0;
-        justify-content: center;
-    }
-
-    .recherche input {
-        width: calc(100% - 48px);
-        max-width: 280px;
-    }
-
-    .hero {
-        min-height: 520px;
-        background-position: center center;
-    }
-
-    .hero-contenu {
-        width: 90%;
-        padding-left: 0;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .hero-contenu h1 {
-        font-size: clamp(30px, 9vw, 45px);
-    }
-
-    .hero-contenu h2 {
-        font-size: clamp(25px, 7vw, 38px);
-    }
-
-    .hero-contenu p {
-        font-size: 16px;
-    }
+    margin-top: 70px;
 }
 
-@media (max-width: 480px) {
-    .hero {
-        min-height: 480px;
+
+/* Contenu */
+
+.footer-contenu {
+    max-width: 1200px;
+
+    width: 90%;
+
+    margin: auto;
+
+    padding: 40px 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+.footer-logo h3 {
+    margin: 0;
+
+    font-size: 22px;
+}
+
+
+.footer-logo span {
+    font-size: 14px;
+
+    letter-spacing: 4px;
+}
+
+
+.footer-contenu p {
+    margin: 0;
+
+    font-size: 14px;
+}
+
+
+/* Réseaux */
+
+.footer-reseaux {
+    display: flex;
+
+    gap: 15px;
+}
+
+
+.footer-reseaux a {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: white;
+
+    text-decoration: none;
+
+    background: rgba(255,255,255,0.12);
+
+    transition: 0.3s;
+}
+
+
+.footer-reseaux a:hover {
+    background: #0866c6;
+
+    transform: translateY(-3px);
+}
+
+
+/* Bas du footer */
+
+.footer-bas {
+    border-top: 1px solid rgba(255,255,255,0.15);
+
+    text-align: center;
+
+    padding: 15px;
+}
+
+
+.footer-bas p {
+    margin: 0;
+
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+
+    .footer-contenu {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 30px 0;
     }
 
-    .hero-contenu h1 {
-        font-size: 30px;
+    .footer-reseaux {
+        justify-content: center;
     }
 
-    .hero-contenu h2 {
-        font-size: 25px;
-    }
 }
